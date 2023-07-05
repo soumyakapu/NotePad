@@ -1,14 +1,15 @@
 import { Dimensions, Pressable, StyleSheet, Text, View } from "react-native"
 import Icon from 'react-native-vector-icons/Ionicons'
-const HomeScreen = () =>{
+import { ScreenType } from "../constants/Constant";
+const HomeScreen = (onExit) =>{
     return(
         <View style={styles.HomeScreenContainer}>
-            <Pressable>
+            <Pressable onPress={()=>onExit(ScreenType.addNote)}>
         <View style= {styles.itemButton}>
             <Text style = {styles.title}>Add Notes</Text>
             <Icon style={styles.icons} name="arrow-forward-outline" />
         </View></Pressable>
-        <Pressable>
+        <Pressable onPress={()=>onExit(ScreenType.allNotes)}>
             <View style= {styles.itemButton}>
             <Text style = {styles.title}>View Notes</Text>
             <Icon style={styles.icons} name="arrow-forward-outline"/>
